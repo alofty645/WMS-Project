@@ -16,6 +16,10 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 // import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -145,13 +149,21 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography
+            {/* <Typography
               variant="h6"
-              color={colors.grey[300]}
+              
               sx={{ m: "15px 0 5px 20px" }}
             >
               WMS
-            </Typography>
+            </Typography> */}
+          
+            <Accordion>
+              <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+            >
+            <Typography>WMS</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
             <Item
               title="Picking"
               to="/form"
@@ -187,12 +199,14 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            </AccordionDetails>
+            </Accordion>
 
             <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
-            >
+            >           
               Other
             </Typography>
             <Item

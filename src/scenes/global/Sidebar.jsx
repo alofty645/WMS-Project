@@ -17,6 +17,9 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import WarehouseOutlinedIcon from "@mui/icons-material/WarehouseOutlined";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -95,34 +98,6 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
-          {/* {!isCollapsed && (
-            <Box mb="25px">
-              <Box display="flex" justifyContent="center" alignItems="center">
-                <img
-                  alt="profile-user"
-                  width="100px"
-                  height="100px"
-                  src={`../../assets/user.png`}
-                  style={{ cursor: "pointer", borderRadius: "50%" }}
-                />
-              </Box>
-              <Box textAlign="center">
-                <Typography
-                  variant="h2"
-                  color={colors.grey[100]}
-                  fontWeight="bold"
-                  sx={{ m: "10px 0 0 0" }}
-                >
-                  Ed Roh
-                </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
-                </Typography>
-              </Box>
-            </Box>
-          )} */}
-
-          {/* first menu items */}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="Dashboard"
@@ -148,7 +123,7 @@ const Sidebar = () => {
             <Item
               title="Purchase Orders"
               to="/purchaseorders"
-              icon={<ContactsOutlinedIcon />}
+              icon={<ShoppingBasketOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -167,7 +142,7 @@ const Sidebar = () => {
               sx={{ background: `${colors.primary[400]} !important` }}
             >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                {<BarChartOutlinedIcon sx={{ m: "0 15px 10px 13px" }} />}
+                {<WarehouseOutlinedIcon sx={{ m: "0 18px 0px 10px" }} />}
 
                 <Typography>WMS</Typography>
               </AccordionSummary>
@@ -217,7 +192,7 @@ const Sidebar = () => {
               sx={{ background: `${colors.primary[400]} !important` }}
             >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                {<BarChartOutlinedIcon sx={{ m: "0 15px 10px 13px" }} />}
+                {<SettingsOutlinedIcon sx={{ m: "0 15px 10px 13px" }} />}
 
                 <Typography>Other</Typography>
               </AccordionSummary>

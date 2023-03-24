@@ -149,16 +149,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            {/* <Typography
-              variant="h6"
-              
-              sx={{ m: "15px 0 5px 20px" }}
+            <Accordion
+              elevation={0}
+              sx={{ background: `${colors.primary[400]} !important` }}
             >
-              WMS
-            </Typography> */}
-
-            <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                {<BarChartOutlinedIcon sx={{ m: "0 15px 10px 13px" }} />}
+
                 <Typography>WMS</Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -200,8 +197,13 @@ const Sidebar = () => {
               </AccordionDetails>
             </Accordion>
 
-            <Accordion>
+            <Accordion
+              elevation={0}
+              sx={{ background: `${colors.primary[400]} !important` }}
+            >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                {<BarChartOutlinedIcon sx={{ m: "0 15px 10px 13px" }} />}
+
                 <Typography>Other</Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -226,20 +228,6 @@ const Sidebar = () => {
                   selected={selected}
                   setSelected={setSelected}
                 />
-                {/* <Item
-              title="Line Chart"
-              to="/line"
-              icon={<TimelineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Geography Chart"
-              to="/geography"
-              icon={<MapOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            /> */}
               </AccordionDetails>
             </Accordion>
           </Box>

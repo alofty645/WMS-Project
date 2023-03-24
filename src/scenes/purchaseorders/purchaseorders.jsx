@@ -6,32 +6,37 @@ import AddIcon from "@mui/icons-material/Add";
 import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 
-const Sales = () => {
+const Purchaseorders = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "prodid", headerName: "Product ID" },
+    { field: "prodid", headerName: "Purchase ID" },
     {
       field: "proddesc",
-      headerName: "Product Description",
+      headerName: "Supplier ",
       flex: 1,
     },
     {
       field: "instock",
-      headerName: "In Stock",
+      headerName: "Items",
       flex: 1,
       cellClassName: "name-column--cell",
     },
 
     {
       field: "baylocation",
-      headerName: "Location",
+      headerName: "Expected",
       flex: 1,
     },
 
     {
       field: "prodprice",
-      headerName: "Price",
+      headerName: "Total Purchase Price",
+      flex: 1,
+    },
+    {
+      field: " ",
+      headerName: "Status",
       flex: 1,
     },
 
@@ -47,7 +52,7 @@ const Sales = () => {
 
   return (
     <Box m="20px">
-      <Header title="Products" />
+      <Header title="Purchase Orders" />
       <Box>
         <Button
           sx={{
@@ -59,7 +64,7 @@ const Sales = () => {
           }}
         >
           <AddIcon sx={{ mr: "10px" }} />
-          New Product
+          New Purchase Order
         </Button>
       </Box>
       <Box
@@ -105,4 +110,4 @@ const Sales = () => {
   );
 };
 
-export default Sales;
+export default Purchaseorders;

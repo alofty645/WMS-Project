@@ -3,41 +3,40 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
 import AddIcon from "@mui/icons-material/Add";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import { mockDataInvoices } from "../../data/mockData";
+import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 
 const Sales = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "id", headerName: "ID" },
+    { field: "prodid", headerName: "Product ID" },
     {
-      field: "date",
-      headerName: "Date",
+      field: "proddesc",
+      headerName: "Product Description",
       flex: 1,
     },
     {
-      field: "name",
-      headerName: "Name",
+      field: "instock",
+      headerName: "In Stock",
       flex: 1,
       cellClassName: "name-column--cell",
     },
 
     {
-      field: "email",
-      headerName: "Email",
-      flex: 1,
-    },
-    {
-      field: "address",
-      headerName: "Address",
+      field: "baylocation",
+      headerName: "Location",
       flex: 1,
     },
 
     {
-      field: "cost",
-      headerName: "Order Total",
+      field: "prodprice",
+      headerName: "Price",
+      flex: 1,
+    },
+    {
+      field: " ",
+      headerName: "Status",
       flex: 1,
     },
 
@@ -53,7 +52,7 @@ const Sales = () => {
 
   return (
     <Box m="20px">
-      <Header title="Sales" />
+      <Header title="Products" />
       <Box>
         <Button
           sx={{
@@ -65,7 +64,7 @@ const Sales = () => {
           }}
         >
           <AddIcon sx={{ mr: "10px" }} />
-          New Sale
+          New Product
         </Button>
       </Box>
       <Box
@@ -102,7 +101,7 @@ const Sales = () => {
       >
         <DataGrid
           checkboxSelection
-          rows={mockDataInvoices}
+          rows={productData}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />

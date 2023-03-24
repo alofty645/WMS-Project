@@ -50,15 +50,20 @@ const Sidebar = () => {
       sx={{
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
+          borderRadius: "30px",
+          margin: "10px 10px 10px 10px !important",
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
+          borderRadius: "100px",
         },
         "& .pro-inner-item": {
           padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
+          color: "#00A74B !important",
+          backgroundColor: colors.grey[100],
+          borderRadius: "30px",
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",

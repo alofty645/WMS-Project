@@ -1,5 +1,16 @@
 import { tokens } from "../theme";
 
+export const productData = [
+  {
+    id: 1,
+    prodid: "0001",
+    proddesc: "test product description",
+    instock: "10",
+    baylocation: "01A",
+    prodprice: "35",
+  },
+];
+
 export const mockDataTeam = [
   {
     id: 1,

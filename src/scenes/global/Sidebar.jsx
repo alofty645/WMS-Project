@@ -202,13 +202,15 @@ const Sidebar = () => {
             </AccordionDetails>
             </Accordion>
 
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >           
-              Other
-            </Typography>
+
+            <Accordion>
+              <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+            >
+            <Typography>Other</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+
             <Item
               title="Forecasting"
               to="/bar"
@@ -244,6 +246,8 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             /> */}
+             </AccordionDetails>
+            </Accordion>
           </Box>
         </Menu>
       </ProSidebar>

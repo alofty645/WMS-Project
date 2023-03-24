@@ -3,8 +3,8 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
 import AddIcon from "@mui/icons-material/Add";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import { mockDataInvoices, productData } from "../../data/mockData";
+import { productData } from "../../data/mockData";
+import Editbutton from "../../components/editbutton";
 
 const Sales = () => {
   const theme = useTheme();
@@ -40,22 +40,7 @@ const Sales = () => {
       headerName: "Admin",
       flex: 2,
       renderCell: ({ row: { access } }) => {
-        return (
-          <Box
-            width="30%"
-            m="0 auto"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            backgroundColor={colors.greenAccent[600]}
-            borderRadius="30px"
-          >
-            <EditOutlinedIcon />
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-              Edit
-            </Typography>
-          </Box>
-        );
+        return <Editbutton></Editbutton>;
       },
     },
   ];

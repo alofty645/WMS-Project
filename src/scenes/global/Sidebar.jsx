@@ -16,10 +16,10 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 // import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -135,7 +135,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-              <Item
+            <Item
               title="Products"
               to="/invoices"
               icon={<HomeOutlinedIcon />}
@@ -156,83 +156,77 @@ const Sidebar = () => {
             >
               WMS
             </Typography> */}
-          
+
             <Accordion>
-              <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-            >
-            <Typography>WMS</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-            <Item
-              title="Picking"
-              to="/form"
-              icon={<HelpOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Packing"
-              to="/calendar"
-              icon={<HelpOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Shipping"
-              to="/faq"
-              icon={<HelpOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Receiving"
-              to="/faq"
-              icon={<HelpOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Replenishment"
-              to="/faq"
-              icon={<HelpOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            </AccordionDetails>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography>WMS</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Item
+                  title="Picking"
+                  to="/form"
+                  icon={<HelpOutlineOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Packing"
+                  to="/calendar"
+                  icon={<HelpOutlineOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Shipping"
+                  to="/faq"
+                  icon={<HelpOutlineOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Receiving"
+                  to="/faq"
+                  icon={<HelpOutlineOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Replenishment"
+                  to="/faq"
+                  icon={<HelpOutlineOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </AccordionDetails>
             </Accordion>
 
-
             <Accordion>
-              <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-            >
-            <Typography>Other</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-
-            <Item
-              title="Forecasting"
-              to="/bar"
-              icon={<BarChartOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Distribution Centre"
-              to="/pie"
-              icon={<PieChartOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Settings"
-              to="/geography"
-              icon={<MapOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            /> 
-            {/* <Item
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography>Other</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Item
+                  title="Forecasting"
+                  to="/bar"
+                  icon={<BarChartOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Distribution Centre"
+                  to="/pie"
+                  icon={<PieChartOutlineOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Settings"
+                  to="/geography"
+                  icon={<MapOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                {/* <Item
               title="Line Chart"
               to="/line"
               icon={<TimelineOutlinedIcon />}
@@ -246,7 +240,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             /> */}
-             </AccordionDetails>
+              </AccordionDetails>
             </Accordion>
           </Box>
         </Menu>

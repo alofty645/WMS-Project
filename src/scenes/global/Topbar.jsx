@@ -22,7 +22,10 @@ const Topbar = () => {
         backgroundColor={colors.primary[400]}
         borderRadius="3px"
       >
-        <InputBase sx={{ ml: 4, flex: 1, textAlign: 'left', width: 400 }} placeholder="Global Search" />
+        <InputBase
+          sx={{ ml: 4, flex: 1, textAlign: "left", width: 400 }}
+          placeholder="Global Search"
+        />
         <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />
         </IconButton>

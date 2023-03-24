@@ -1,35 +1,28 @@
-import { Box } from "@mui/material";
+import { Button, Box, Typography, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import { mockDataInvoices } from "../../data/mockData";
 
-const Contacts = () => {
+const Sales = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID" },
+    { field: "id", headerName: "ID" },
+    {
+      field: "date",
+      headerName: "Date",
+      flex: 1,
+    },
     {
       field: "name",
       headerName: "Name",
       flex: 1,
       cellClassName: "name-column--cell",
     },
-    {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      headerAlign: "left",
-      align: "left",
-    },
-    {
-      field: "phone",
-      headerName: "Phone Number",
-      flex: 1,
-    },
+
     {
       field: "email",
       headerName: "Email",
@@ -40,26 +33,56 @@ const Contacts = () => {
       headerName: "Address",
       flex: 1,
     },
+
     {
-      field: "city",
-      headerName: "City",
+      field: "cost",
+      headerName: "Order Total",
       flex: 1,
     },
+
     {
-      field: "zipCode",
-      headerName: "Zip Code",
-      flex: 1,
+      field: "Admin",
+      headerName: "Admin",
+      flex: 2,
+      renderCell: ({ row: { access } }) => {
+        return (
+          <Box
+            width="30%"
+            m="0 auto"
+            p="5px"
+            display="flex"
+            justifyContent="center"
+            backgroundColor={colors.greenAccent[600]}
+            borderRadius="30px"
+          >
+            <EditOutlinedIcon />
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+              Edit
+            </Typography>
+          </Box>
+        );
+      },
     },
   ];
 
   return (
     <Box m="20px">
-      <Header
-        title="CONTACTS"
-        subtitle="List of Contacts for Future Reference"
-      />
+      <Header title="Sales" />
+      <Box>
+        <Button
+          sx={{
+            backgroundColor: colors.blueAccent[700],
+            color: colors.grey[100],
+            fontSize: "14px",
+            fontWeight: "bold",
+            padding: "10px 20px",
+          }}
+        >
+          <AddIcon sx={{ mr: "10px" }} />
+          New Sale
+        </Button>
+      </Box>
       <Box
-        m="40px 0 0 0"
         height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
@@ -87,12 +110,13 @@ const Contacts = () => {
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${colors.grey[100]} !important`,
+            margin: "10px",
           },
         }}
       >
         <DataGrid
           checkboxSelection
-          rows={mockDataContacts}
+          rows={mockDataInvoices}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
@@ -101,4 +125,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Sales;

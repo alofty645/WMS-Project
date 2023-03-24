@@ -3,6 +3,7 @@ import { tokens } from "../theme";
 export const mockDataTeam = [
   {
     id: 1,
+    date: "01/01/2000",
     name: "Jon Snow",
     email: "jonsnow@gmail.com",
     age: 35,
@@ -11,6 +12,7 @@ export const mockDataTeam = [
   },
   {
     id: 2,
+    date: "01/01/2000",
     name: "Cersei Lannister",
     email: "cerseilannister@gmail.com",
     age: 42,
@@ -19,6 +21,7 @@ export const mockDataTeam = [
   },
   {
     id: 3,
+    date: "01/01/2000",
     name: "Jaime Lannister",
     email: "jaimelannister@gmail.com",
     age: 45,
@@ -27,6 +30,7 @@ export const mockDataTeam = [
   },
   {
     id: 4,
+    date: "01/01/2000",
     name: "Anya Stark",
     email: "anyastark@gmail.com",
     age: 16,
@@ -35,6 +39,7 @@ export const mockDataTeam = [
   },
   {
     id: 5,
+    date: "01/01/2000",
     name: "Daenerys Targaryen",
     email: "daenerystargaryen@gmail.com",
     age: 31,
@@ -43,6 +48,7 @@ export const mockDataTeam = [
   },
   {
     id: 6,
+    date: "01/01/2000",
     name: "Ever Melisandre",
     email: "evermelisandre@gmail.com",
     age: 150,
@@ -51,6 +57,7 @@ export const mockDataTeam = [
   },
   {
     id: 7,
+    date: "01/01/2000",
     name: "Ferrara Clifford",
     email: "ferraraclifford@gmail.com",
     age: 44,
@@ -59,6 +66,7 @@ export const mockDataTeam = [
   },
   {
     id: 8,
+    date: "01/01/2000",
     name: "Rossini Frances",
     email: "rossinifrances@gmail.com",
     age: 36,
@@ -67,6 +75,7 @@ export const mockDataTeam = [
   },
   {
     id: 9,
+    date: "01/01/2000",
     name: "Harvey Roxie",
     email: "harveyroxie@gmail.com",
     age: 65,
@@ -207,6 +216,7 @@ export const mockDataInvoices = [
     cost: "21.24",
     phone: "(665)121-5454",
     date: "03/12/2022",
+    address: "4123 Easer Blvd, Wentington, AD 142213",
   },
   {
     id: 2,
@@ -215,6 +225,7 @@ export const mockDataInvoices = [
     cost: "1.24",
     phone: "(421)314-2288",
     date: "06/15/2021",
+    address: "5642 Northwood St, Springfield, AD 142213",
   },
   {
     id: 3,
@@ -223,6 +234,7 @@ export const mockDataInvoices = [
     cost: "11.24",
     phone: "(422)982-6739",
     date: "05/02/2022",
+    address: "1234 Oakwood Ln, New York, AD 142213",
   },
   {
     id: 4,
@@ -231,6 +243,7 @@ export const mockDataInvoices = [
     cost: "80.55",
     phone: "(921)425-6742",
     date: "03/21/2022",
+    address: "7890 Maple Ave, San Francisco, AD 142213",
   },
   {
     id: 5,
@@ -239,6 +252,7 @@ export const mockDataInvoices = [
     cost: "1.24",
     phone: "(421)445-1189",
     date: "01/12/2021",
+    address: "4567 Pine St, Los Angeles, AD 142213",
   },
   {
     id: 6,
@@ -247,6 +261,7 @@ export const mockDataInvoices = [
     cost: "63.12",
     phone: "(232)545-6483",
     date: "11/02/2022",
+    address: "8910 Cedar Blvd, Seattle, AD 142213",
   },
   {
     id: 7,
@@ -255,6 +270,7 @@ export const mockDataInvoices = [
     cost: "52.42",
     phone: "(543)124-0123",
     date: "02/11/2022",
+    address: "2468 Elm St, Miami, AD 142213",
   },
   {
     id: 8,
@@ -263,6 +279,7 @@ export const mockDataInvoices = [
     cost: "21.24",
     phone: "(222)444-5555",
     date: "05/02/2021",
+    address: "1357 Birch Ln, Chicago, AD 142213",
   },
 ];
 

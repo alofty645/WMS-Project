@@ -20,6 +20,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -125,6 +126,7 @@ const Sidebar = () => {
             </Box>
           )} */}
 
+          {/* first menu items */}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="Dashboard"
@@ -135,8 +137,8 @@ const Sidebar = () => {
             />
             <Item
               title="Sales"
-              to="/orders"
-              icon={<PeopleOutlinedIcon />}
+              to="/Sales"
+              icon={<ShoppingCartIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -161,6 +163,9 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+
+            {/* WMS accordion */}
+
             <Accordion
               elevation={0}
               sx={{ background: `${colors.primary[400]} !important` }}
@@ -208,6 +213,8 @@ const Sidebar = () => {
                 />
               </AccordionDetails>
             </Accordion>
+
+            {/* Second accordion, will change over time */}
 
             <Accordion
               elevation={0}

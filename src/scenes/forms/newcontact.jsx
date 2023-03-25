@@ -9,6 +9,10 @@ import * as React from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import AddIcon from "@mui/icons-material/Add";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import InputLabel from "@mui/material/InputLabel";
 
 const NewContact = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
@@ -43,7 +47,7 @@ const NewContact = () => {
         <AddIcon sx={{ mr: "10px" }} />
         New Contact
       </Button>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} /*</Box>onClose={handleClose}*/>
         <DialogContent>
           <Box m="20px">
             <Header title="New Contact" />
@@ -122,7 +126,6 @@ const NewContact = () => {
                       helperText={touched.business && errors.business}
                       sx={{ gridColumn: "span 2" }}
                     />
-
                     <TextField
                       fullWidth
                       variant="filled"
@@ -136,7 +139,6 @@ const NewContact = () => {
                       helperText={touched.email && errors.email}
                       sx={{ gridColumn: "span 4" }}
                     />
-
                     <TextField
                       fullWidth
                       variant="filled"
@@ -189,38 +191,49 @@ const NewContact = () => {
                       helperText={touched.postcode && errors.postcode}
                       sx={{ gridColumn: "span 2" }}
                     />
-                    <TextField
-                      fullWidth
-                      variant="filled"
-                      type="text"
-                      label="Contact Type"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      value={values.contacttype}
-                      name="contacttype"
-                      error={!!touched.contacttype && !!errors.contacttype}
-                      helperText={touched.contacttype && errors.contacttype}
-                      sx={{ gridColumn: "span 2" }}
-                    />
-                    <TextField
-                      fullWidth
-                      variant="filled"
-                      type="text"
-                      label="Pricing Category"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      value={values.pricingcategory}
-                      name="contacttype"
-                      error={
-                        !!touched.pricingcategory && !!errors.pricingcategory
-                      }
-                      helperText={
-                        touched.pricingcategory && errors.pricingcategory
-                      }
-                      sx={{ gridColumn: "span 2" }}
-                    />
+                    <Box sx={{ gridColumn: "span 2" }} />
+                    <Box sx={{ gridColumn: "span 2" }}>
+                      <FormControl fullWidth>
+                        <InputLabel>Contact Type</InputLabel>
+                        <Select label="Pricing Category">
+                          <MenuItem defaultValue value={0}>
+                            None
+                          </MenuItem>
+                          <MenuItem value={1}>1</MenuItem>
+                          <MenuItem value={2}>2</MenuItem>
+                          <MenuItem value={3}>3</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+
+                    <Box sx={{ gridColumn: "span 2" }}>
+                      <FormControl fullWidth>
+                        <InputLabel>Pricing Category</InputLabel>
+                        <Select label="Pricing Category">
+                          <MenuItem defaultValue value={0}>
+                            None
+                          </MenuItem>
+                          <MenuItem value={1}>1</MenuItem>
+                          <MenuItem value={2}>2</MenuItem>
+                          <MenuItem value={3}>3</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
                   </Box>
                   <Box display="flex" justifyContent="end" mt="20px">
+                    <Button
+                      onClick={handleClose}
+                      sx={{
+                        mr: "10px",
+                        backgroundColor: colors.blueAccent[600],
+                        color: colors.grey[100],
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        padding: "0px 30px ",
+                      }}
+                    >
+                      Cancel
+                    </Button>
                     <Button
                       type="submit"
                       color="secondary"

@@ -9,8 +9,6 @@ import * as React from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import AddIcon from "@mui/icons-material/Add";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 
 const NewContact = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
@@ -67,7 +65,7 @@ const NewContact = () => {
                   <Box
                     display="grid"
                     gap="30px"
-                    gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+                    gridTemplateColumns="repeat(6, minmax(0, 1fr))"
                     sx={{
                       "& > div": {
                         gridColumn: isNonMobile ? undefined : "span 4",
@@ -99,23 +97,32 @@ const NewContact = () => {
                       helperText={touched.lastName && errors.lastName}
                       sx={{ gridColumn: "span 2" }}
                     />
-                    {/* <Select
+                    <TextField
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Contact Type"
+                      label="Contact Number"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      name="ContactType"
-                      value={values.contacttype}
-                      error={!!touched.contacttype && !!errors.contacttype}
-                      helperText={touched.contacttype && errors.contacttype}
+                      value={values.contact}
+                      name="contact"
+                      error={!!touched.contact && !!errors.contact}
+                      helperText={touched.contact && errors.contact}
                       sx={{ gridColumn: "span 2" }}
-                    >
-                      <MenuItem value={1}>Ten</MenuItem>
-                      <MenuItem value={2}>Twenty</MenuItem>
-                      <MenuItem value={3}>Thirty</MenuItem>
-                    </Select> */}
+                    />
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      label="Business"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.business}
+                      name="business"
+                      error={!!touched.business && !!errors.business}
+                      helperText={touched.business && errors.business}
+                      sx={{ gridColumn: "span 2" }}
+                    />
+
                     <TextField
                       fullWidth
                       variant="filled"
@@ -129,44 +136,88 @@ const NewContact = () => {
                       helperText={touched.email && errors.email}
                       sx={{ gridColumn: "span 4" }}
                     />
+
                     <TextField
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Contact Number"
+                      label="Address"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      value={values.contact}
-                      name="contact"
-                      error={!!touched.contact && !!errors.contact}
-                      helperText={touched.contact && errors.contact}
+                      value={values.address}
+                      name="address"
+                      error={!!touched.address && !!errors.address}
+                      helperText={touched.address && errors.address}
                       sx={{ gridColumn: "span 4" }}
                     />
                     <TextField
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Address 1"
+                      label="City"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      value={values.address1}
-                      name="address1"
-                      error={!!touched.address1 && !!errors.address1}
-                      helperText={touched.address1 && errors.address1}
-                      sx={{ gridColumn: "span 4" }}
+                      value={values.city}
+                      name="city"
+                      error={!!touched.city && !!errors.city}
+                      helperText={touched.city && errors.city}
+                      sx={{ gridColumn: "span 2" }}
                     />
                     <TextField
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Address 2"
+                      label="Country"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      value={values.address2}
-                      name="address2"
-                      error={!!touched.address2 && !!errors.address2}
-                      helperText={touched.address2 && errors.address2}
-                      sx={{ gridColumn: "span 4" }}
+                      value={values.country}
+                      name="Country"
+                      error={!!touched.country && !!errors.country}
+                      helperText={touched.country && errors.subcountryurb}
+                      sx={{ gridColumn: "span 2" }}
+                    />
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Postcode"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.postcode}
+                      name="Postcode"
+                      error={!!touched.postcode && !!errors.postcode}
+                      helperText={touched.postcode && errors.postcode}
+                      sx={{ gridColumn: "span 2" }}
+                    />
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Contact Type"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.contacttype}
+                      name="contacttype"
+                      error={!!touched.contacttype && !!errors.contacttype}
+                      helperText={touched.contacttype && errors.contacttype}
+                      sx={{ gridColumn: "span 2" }}
+                    />
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Pricing Category"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.pricingcategory}
+                      name="contacttype"
+                      error={
+                        !!touched.pricingcategory && !!errors.pricingcategory
+                      }
+                      helperText={
+                        touched.pricingcategory && errors.pricingcategory
+                      }
+                      sx={{ gridColumn: "span 2" }}
                     />
                   </Box>
                   <Box display="flex" justifyContent="end" mt="20px">

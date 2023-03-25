@@ -1,11 +1,11 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import Editbutton from "../../components/editbutton";
+import NewContact from "../forms/newcontact";
 
 const Contacts = () => {
   const theme = useTheme();
@@ -66,7 +66,8 @@ const Contacts = () => {
     <Box m="20px">
       <Header title="Contacts" />
       <box>
-        <Button
+        <NewContact></NewContact>
+        {/* <NewContact
           sx={{
             backgroundColor: colors.blueAccent[700],
             color: colors.grey[100],
@@ -74,10 +75,7 @@ const Contacts = () => {
             fontWeight: "bold",
             padding: "10px 20px",
           }}
-        >
-          <AddIcon sx={{ mr: "10px" }} />
-          New Contact
-        </Button>
+        /> */}
       </box>
       <Box
         height="75vh"

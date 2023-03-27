@@ -64,6 +64,7 @@ const Sidebar = () => {
           color: "#00A74B !important",
           backgroundColor: colors.grey[100],
           borderRadius: "30px",
+          width: "90%",
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",

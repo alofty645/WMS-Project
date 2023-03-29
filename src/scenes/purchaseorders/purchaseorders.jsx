@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import AddIcon from "@mui/icons-material/Add";
 import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
+import Uploadcsv from "../forms/uploadcsv";
 
 const Purchaseorders = () => {
   const theme = useTheme();
@@ -53,7 +54,7 @@ const Purchaseorders = () => {
   return (
     <Box m="20px">
       <Header title="Purchase Orders" />
-      <Box>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Button
           sx={{
             backgroundColor: colors.blueAccent[700],
@@ -66,6 +67,7 @@ const Purchaseorders = () => {
           <AddIcon sx={{ mr: "10px" }} />
           New Purchase Order
         </Button>
+        <Uploadcsv></Uploadcsv>
       </Box>
       <Box
         height="75vh"

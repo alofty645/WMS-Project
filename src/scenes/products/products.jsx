@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 import NewProduct from "../forms/newproduct";
+import Uploadcsv from "../forms/uploadcsv";
 
 const Sales = () => {
   const theme = useTheme();
@@ -53,8 +54,9 @@ const Sales = () => {
   return (
     <Box m="20px">
       <Header title="Products" />
-      <Box>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <NewProduct></NewProduct>
+        <Uploadcsv></Uploadcsv>
       </Box>
       <Box
         height="75vh"

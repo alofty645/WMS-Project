@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import AddIcon from "@mui/icons-material/Add";
 import { mockDataInvoices } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
+import Uploadcsv from "../forms/uploadcsv";
 
 const Sales = () => {
   const theme = useTheme();
@@ -58,20 +59,26 @@ const Sales = () => {
   return (
     <Box m="20px">
       <Header title="Sales" />
-      <Box>
-        <Button
-          sx={{
-            backgroundColor: colors.blueAccent[700],
-            color: colors.grey[100],
-            fontSize: "14px",
-            fontWeight: "bold",
-            padding: "10px 20px",
-          }}
-        >
-          <AddIcon sx={{ mr: "10px" }} />
-          New Sale
-        </Button>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box>
+          <Button
+            sx={{
+              backgroundColor: colors.blueAccent[700],
+              color: colors.grey[100],
+              fontSize: "14px",
+              fontWeight: "bold",
+              padding: "10px 20px",
+            }}
+          >
+            <AddIcon sx={{ mr: "10px" }} />
+            New Sales Order
+          </Button>
+        </Box>
+        <Box>
+          <Uploadcsv></Uploadcsv>
+        </Box>
       </Box>
+
       <Box
         height="75vh"
         sx={{

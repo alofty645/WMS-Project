@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 import Editbutton from "../../components/editbutton";
 import NewContact from "../forms/newcontact";
+import Uploadcsv from "../forms/uploadcsv";
 
 const Contacts = () => {
   const theme = useTheme();
@@ -70,8 +71,9 @@ const Contacts = () => {
   return (
     <Box m="20px">
       <Header title="Contacts" />
-      <Box>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <NewContact></NewContact>
+        <Uploadcsv></Uploadcsv>
       </Box>
       <Box
         height="75vh"

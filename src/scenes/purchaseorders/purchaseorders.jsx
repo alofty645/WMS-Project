@@ -1,4 +1,4 @@
-import { Button, Box, Typography, useTheme } from "@mui/material";
+import { Button, Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
@@ -12,6 +12,7 @@ const Purchaseorders = () => {
   const colors = tokens(theme.palette.mode);
   const columns = [
     { field: "prodid", headerName: "Purchase ID" },
+    { field: "podate", headerName: "Date" },
     {
       field: "proddesc",
       headerName: "Supplier ",

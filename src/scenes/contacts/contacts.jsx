@@ -65,18 +65,9 @@ const Contacts = () => {
   return (
     <Box m="20px">
       <Header title="Contacts" />
-      <box>
+      <Box>
         <NewContact></NewContact>
-        {/* <NewContact
-          sx={{
-            backgroundColor: colors.blueAccent[700],
-            color: colors.grey[100],
-            fontSize: "14px",
-            fontWeight: "bold",
-            padding: "10px 20px",
-          }}
-        /> */}
-      </box>
+      </Box>
       <Box
         height="75vh"
         sx={{

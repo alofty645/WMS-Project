@@ -1,10 +1,10 @@
-import { Button, Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import AddIcon from "@mui/icons-material/Add";
 import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
+import NewProduct from "../forms/newproduct";
 
 const Sales = () => {
   const theme = useTheme();
@@ -54,18 +54,7 @@ const Sales = () => {
     <Box m="20px">
       <Header title="Products" />
       <Box>
-        <Button
-          sx={{
-            backgroundColor: colors.blueAccent[700],
-            color: colors.grey[100],
-            fontSize: "14px",
-            fontWeight: "bold",
-            padding: "10px 20px",
-          }}
-        >
-          <AddIcon sx={{ mr: "10px" }} />
-          New Product
-        </Button>
+        <NewProduct></NewProduct>
       </Box>
       <Box
         height="75vh"

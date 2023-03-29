@@ -83,10 +83,6 @@ const NewProduct = () => {
                       label="Product Code"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      //   value={values.firstName}
-                      //   name="firstName"
-                      //   error={!!touched.firstName && !!errors.firstName}
-                      //   helperText={touched.firstName && errors.firstName}
                       sx={{ gridColumn: "span 2" }}
                     />
                     <TextField
@@ -107,7 +103,6 @@ const NewProduct = () => {
                       onChange={handleChange}
                       sx={{ gridColumn: "span 2" }}
                     />
-
                     <TextField
                       fullWidth
                       variant="filled"
@@ -169,28 +164,5 @@ const NewProduct = () => {
     </Box>
   );
 };
-
-// const phoneRegExp =
-//   /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
-
-// const checkoutSchema = yup.object().shape({
-//   firstName: yup.string().required("required"),
-//   lastName: yup.string().required("required"),
-//   email: yup.string().email("invalid email").required("required"),
-//   contact: yup
-//     .string()
-//     .matches(phoneRegExp, "Phone number is not valid")
-//     .required("required"),
-//   address1: yup.string().required("required"),
-//   address2: yup.string().required("required"),
-// });
-// const initialValues = {
-//   firstName: "",
-//   lastName: "",
-//   email: "",
-//   contact: "",
-//   address1: "",
-//   address2: "",
-// };
 
 export default NewProduct;

@@ -15,15 +15,15 @@ const Contacts = () => {
     { field: "id", headerName: "ID", flex: 0 },
     { field: "registrarId", headerName: "Contact Type" },
     {
-      field: "name",
-      headerName: "Name",
+      field: "FirstName",
+      headerName: "First Name",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
-      field: "age",
-      headerName: "Age",
-      type: "number",
+      field: "LastName",
+      headerName: "Last Name",
+      type: "text",
       headerAlign: "left",
       align: "left",
     },
@@ -50,6 +50,11 @@ const Contacts = () => {
     {
       field: "zipCode",
       headerName: "Zip Code",
+      flex: 1,
+    },
+    {
+      field: "Pricingcategory",
+      headerName: "Pricing Category",
       flex: 1,
     },
     {

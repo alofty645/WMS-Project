@@ -150,35 +150,35 @@ const Sidebar = () => {
               <AccordionDetails>
                 <Item
                   title="Picking"
-                  to="/form"
+                  to="/picking"
                   icon={<HelpOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Packing"
-                  to="/calendar"
+                  to="/packing"
                   icon={<HelpOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Shipping"
-                  to="/faq"
+                  to="/shipping"
                   icon={<HelpOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Receiving"
-                  to="/faq"
+                  to="/receiving"
                   icon={<HelpOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Replenishment"
-                  to="/faq"
+                  to="/replenishment"
                   icon={<HelpOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
@@ -200,21 +200,21 @@ const Sidebar = () => {
               <AccordionDetails>
                 <Item
                   title="Forecasting"
-                  to="/bar"
+                  to="/forecasting"
                   icon={<BarChartOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
-                  title="Distribution Centre"
-                  to="/pie"
+                  title="Distribution"
+                  to="/distribution"
                   icon={<PieChartOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Settings"
-                  to="/geography"
+                  to="/settings"
                   icon={<MapOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}

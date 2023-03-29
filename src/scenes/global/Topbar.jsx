@@ -23,7 +23,7 @@ const Topbar = () => {
         borderRadius="3px"
       >
         <InputBase
-          sx={{ ml: 4, flex: 1, textAlign: "left", width: 400 }}
+          sx={{ ml: 4, flex: 1, textAlign: "left", width: 400, height: 50 }}
           placeholder="Global Search"
         />
         <IconButton type="button" sx={{ p: 1 }}>

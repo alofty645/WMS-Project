@@ -11,14 +11,10 @@ const Editbutton = () => {
         sx={{
           backgroundColor: colors.greenAccent[600],
           color: colors.grey[100],
-          fontSize: "14px",
-          fontWeight: "bold",
-          padding: "3px 20px",
           borderRadius: "30px",
         }}
       >
-        <EditOutlinedIcon sx={{ mr: "10px" }} />
-        Edit
+        <EditOutlinedIcon />
       </Button>
 
       <Typography color={colors.grey[100]} sx={{ ml: "5px" }}></Typography>

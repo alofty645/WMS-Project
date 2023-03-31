@@ -143,11 +143,11 @@ const NewContact = () => {
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Address"
+                      label="Billing Address"
                       onBlur={handleBlur}
                       onChange={handleChange}
                       value={values.address}
-                      name="address"
+                      name="BillingAddress"
                       error={!!touched.address && !!errors.address}
                       helperText={touched.address && errors.address}
                       sx={{ gridColumn: "span 4" }}
@@ -195,10 +195,8 @@ const NewContact = () => {
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Contact Type</InputLabel>
-                        <Select label="Pricing Category">
-                          <MenuItem defaultValue value={0}>
-                            None
-                          </MenuItem>
+                        <Select defaultValue value={1} label="Pricing Category">
+                          <MenuItem value={0}>None</MenuItem>
                           <MenuItem value={1}>1</MenuItem>
                           <MenuItem value={2}>2</MenuItem>
                           <MenuItem value={3}>3</MenuItem>
@@ -209,10 +207,8 @@ const NewContact = () => {
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Pricing Category</InputLabel>
-                        <Select label="Pricing Category">
-                          <MenuItem defaultValue value={0}>
-                            None
-                          </MenuItem>
+                        <Select defaultValue value={1} label="Pricing Category">
+                          <MenuItem value={0}>None</MenuItem>
                           <MenuItem value={1}>1</MenuItem>
                           <MenuItem value={2}>2</MenuItem>
                           <MenuItem value={3}>3</MenuItem>

@@ -1,6 +1,5 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { Formik } from "formik";
-// import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
@@ -14,7 +13,14 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 
-const NewProduct = () => {
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+
+const NewSale = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -45,18 +51,14 @@ const NewProduct = () => {
         }}
       >
         <AddIcon sx={{ mr: "10px" }} />
-        New Product
+        New Sale
       </Button>
-      <Dialog open={open} /*</Box>onClose={handleClose}*/>
+      <Dialog open={open}>
         <DialogContent>
           <Box m="20px">
-            <Header title="New Product" />
+            <Header title="New Sale" />
 
-            <Formik
-              onSubmit={handleFormSubmit}
-              //   initialValues={initialValues}
-              //   validationSchema={checkoutSchema}
-            >
+            <Formik onSubmit={handleFormSubmit}>
               {({
                 values,
                 errors,
@@ -80,7 +82,7 @@ const NewProduct = () => {
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Product Code"
+                      label="Sale Date"
                       onBlur={handleBlur}
                       onChange={handleChange}
                       sx={{ gridColumn: "span 2" }}
@@ -89,40 +91,98 @@ const NewProduct = () => {
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Product Description"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      sx={{ gridColumn: "span 4" }}
-                    />
-                    <TextField
-                      fullWidth
-                      variant="filled"
-                      type="text"
-                      label="In Stock"
+                      label="Customer"
                       onBlur={handleBlur}
                       onChange={handleChange}
                       sx={{ gridColumn: "span 2" }}
                     />
-                    <TextField
-                      fullWidth
-                      variant="filled"
-                      type="text"
-                      label="Price"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      sx={{ gridColumn: "span 2" }}
-                    />
-
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
-                        <InputLabel>Product Status</InputLabel>
+                        <InputLabel>Order Status</InputLabel>
                         <Select defaultValue value={1} label="Pricing Category">
                           <MenuItem value={1}>Active</MenuItem>
-                          <MenuItem value={2}>Inactive</MenuItem>
+                          <MenuItem value={2}>Draft</MenuItem>
+                          <MenuItem value={3}>Transfer</MenuItem>
                         </Select>
                       </FormControl>
                     </Box>
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Shipping Address"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      sx={{ gridColumn: "span 6" }}
+                    />
+
+                    <Typography fullWidth>
+                      <h2>Products</h2>
+                    </Typography>
+
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Add a Product"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      sx={{ gridColumn: "span 6" }}
+                    />
+
+                    <Box
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        gridColumn: "span 6",
+                      }}
+                    >
+                      <TableContainer>
+                        <Table aria-label="simple table">
+                          <TableHead>
+                            <TableRow>
+                              <TableCell>Product ID</TableCell>
+                              <TableCell>Product Description</TableCell>
+                              <TableCell>In Stock</TableCell>
+                              <TableCell>Location</TableCell>
+                              <TableCell>Price</TableCell>
+                              <TableCell>Status</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell>123</TableCell>
+                              <TableCell>Test Product</TableCell>
+                              <TableCell>10</TableCell>
+                              <TableCell>01A</TableCell>
+                              <TableCell>$50</TableCell>
+                              <TableCell>Active</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell>123</TableCell>
+                              <TableCell>Test Product</TableCell>
+                              <TableCell>10</TableCell>
+                              <TableCell>01A</TableCell>
+                              <TableCell>$50</TableCell>
+                              <TableCell>Active</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell>123</TableCell>
+                              <TableCell>Test Product</TableCell>
+                              <TableCell>10</TableCell>
+                              <TableCell>01A</TableCell>
+                              <TableCell>$50</TableCell>
+                              <TableCell>Active</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </TableContainer>
+                    </Box>
+                    <Box sx={{ gridColumn: "span 4" }}></Box>
+
+                    <h3>Order Total: </h3>
                   </Box>
+
                   <Box display="flex" justifyContent="end" mt="20px">
                     <Button
                       onClick={handleClose}
@@ -150,7 +210,7 @@ const NewProduct = () => {
                         padding: "10px 20px",
                       }}
                     >
-                      Add New Product
+                      Add New Sale
                     </Button>
                   </Box>
                 </form>
@@ -163,4 +223,4 @@ const NewProduct = () => {
   );
 };
 
-export default NewProduct;
+export default NewSale;

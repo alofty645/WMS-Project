@@ -40,7 +40,7 @@ const Contacts = () => {
     },
     {
       field: "address",
-      headerName: "Address",
+      headerName: "Billing Address",
       flex: 1,
     },
     {

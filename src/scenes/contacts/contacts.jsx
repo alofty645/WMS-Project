@@ -61,7 +61,7 @@ const Contacts = () => {
     {
       field: "Admin",
       headerName: "Admin",
-      flex: 3,
+      flex: 2,
       renderCell: ({ row: { access } }) => {
         return <Editbutton></Editbutton>;
       },

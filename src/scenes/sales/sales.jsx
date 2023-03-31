@@ -1,8 +1,7 @@
-import { Button, Box, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import AddIcon from "@mui/icons-material/Add";
 import { mockDataInvoices } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 import Uploadcsv from "../forms/uploadcsv";
@@ -12,7 +11,7 @@ const Sales = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "id", headerName: "ID" },
+    { field: "id", headerName: "Order ID" },
     {
       field: "date",
       headerName: "Date",
@@ -20,14 +19,14 @@ const Sales = () => {
     },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Customer",
       flex: 1,
       cellClassName: "name-column--cell",
     },
 
     {
-      field: "email",
-      headerName: "Email",
+      field: "",
+      headerName: "Contact Type",
       flex: 1,
     },
     {
@@ -50,7 +49,7 @@ const Sales = () => {
     {
       field: "Admin",
       headerName: "Admin",
-      flex: 2,
+      flex: 1,
       renderCell: ({ row: { access } }) => {
         return <Editbutton></Editbutton>;
       },

@@ -27,7 +27,7 @@ const Purchaseorders = () => {
 
     {
       field: "baylocation",
-      headerName: "Expected",
+      headerName: "Expected Date",
       flex: 1,
     },
 
@@ -45,7 +45,7 @@ const Purchaseorders = () => {
     {
       field: "Admin",
       headerName: "Admin",
-      flex: 2,
+      flex: 1,
       renderCell: ({ row: { access } }) => {
         return <Editbutton></Editbutton>;
       },

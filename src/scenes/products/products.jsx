@@ -36,7 +36,12 @@ const Sales = () => {
       flex: 1,
     },
     {
-      field: " ",
+      field: "incomingstock",
+      headerName: "Incoming Stock",
+      flex: 1,
+    },
+    {
+      field: "Status",
       headerName: "Status",
       flex: 1,
     },
@@ -44,7 +49,7 @@ const Sales = () => {
     {
       field: "Admin",
       headerName: "Admin",
-      flex: 2,
+      flex: 1,
       renderCell: ({ row: { access } }) => {
         return <Editbutton></Editbutton>;
       },

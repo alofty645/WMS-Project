@@ -195,11 +195,11 @@ const NewContact = () => {
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Contact Type</InputLabel>
-                        <Select defaultValue value={1} label="Pricing Category">
-                          <MenuItem value={0}>None</MenuItem>
-                          <MenuItem value={1}>1</MenuItem>
-                          <MenuItem value={2}>2</MenuItem>
-                          <MenuItem value={3}>3</MenuItem>
+                        <Select defaultValue value={0} label="Contact">
+                          <MenuItem value={0}>Select</MenuItem>
+                          <MenuItem value={1}>B2C Customer</MenuItem>
+                          <MenuItem value={2}>B2B Customer</MenuItem>
+                          <MenuItem value={3}>Supplier</MenuItem>
                         </Select>
                       </FormControl>
                     </Box>

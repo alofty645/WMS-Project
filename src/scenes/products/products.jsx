@@ -2,23 +2,35 @@ import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 import NewProduct from "../forms/newproduct";
 import Uploadcsv from "../forms/uploadcsv";
+import { useEffect, useState } from "react";
+import supabase from "../../supabase.js";
 
 const Sales = () => {
+  const [products, setProducts] = useState([]);
+
+  async function getProducts() {
+    let { data: product, error } = await supabase.from("product").select("*");
+    setProducts(product);
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "prodid", headerName: "Product ID" },
+    { field: "sku", headerName: "Product ID" },
     {
-      field: "proddesc",
+      field: "product_description",
       headerName: "Product Description",
       flex: 1,
     },
     {
-      field: "instock",
+      field: "in_stock",
       headerName: "In Stock",
       flex: 1,
       cellClassName: "name-column--cell",
@@ -31,7 +43,7 @@ const Sales = () => {
     },
 
     {
-      field: "prodprice",
+      field: "price",
       headerName: "Price",
       flex: 1,
     },
@@ -41,7 +53,7 @@ const Sales = () => {
       flex: 1,
     },
     {
-      field: "Status",
+      field: "status",
       headerName: "Status",
       flex: 1,
     },
@@ -97,7 +109,7 @@ const Sales = () => {
       >
         <DataGrid
           checkboxSelection
-          rows={productData}
+          rows={products}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />

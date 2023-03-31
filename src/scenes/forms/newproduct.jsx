@@ -1,6 +1,5 @@
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
-// import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
@@ -13,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
+import supabase from "../../supabase.js";
 
 const NewProduct = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");

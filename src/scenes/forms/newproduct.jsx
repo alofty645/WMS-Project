@@ -13,6 +13,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import supabase from "../../supabase.js";
+import * as yup from "yup";
 
 const NewProduct = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
@@ -54,8 +55,8 @@ const NewProduct = () => {
 
             <Formik
               onSubmit={handleFormSubmit}
-              //   initialValues={initialValues}
-              //   validationSchema={checkoutSchema}
+              initialValues={initialValues}
+              validationSchema={checkoutSchema}
             >
               {({
                 values,
@@ -77,15 +78,19 @@ const NewProduct = () => {
                     }}
                   >
                     <TextField
+                      value={values.sku}
+                      name="sku"
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Product Code"
+                      label="SKU"
                       onBlur={handleBlur}
                       onChange={handleChange}
                       sx={{ gridColumn: "span 2" }}
                     />
                     <TextField
+                      value={values.product_description}
+                      name="product_description"
                       fullWidth
                       variant="filled"
                       type="text"
@@ -95,6 +100,8 @@ const NewProduct = () => {
                       sx={{ gridColumn: "span 4" }}
                     />
                     <TextField
+                      value={values.instock}
+                      name="instock"
                       fullWidth
                       variant="filled"
                       type="text"
@@ -104,6 +111,8 @@ const NewProduct = () => {
                       sx={{ gridColumn: "span 2" }}
                     />
                     <TextField
+                      value={values.price}
+                      name="price"
                       fullWidth
                       variant="filled"
                       type="text"
@@ -113,15 +122,20 @@ const NewProduct = () => {
                       sx={{ gridColumn: "span 2" }}
                     />
 
-                    <Box sx={{ gridColumn: "span 2" }}>
+                    {/* <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Product Status</InputLabel>
-                        <Select defaultValue value={1} label="Pricing Category">
+                        <Select
+                          value={values.status}
+                          name="price"
+                          value={1}
+                          label="Pricing Category"
+                        >
                           <MenuItem value={1}>Active</MenuItem>
                           <MenuItem value={2}>Inactive</MenuItem>
                         </Select>
                       </FormControl>
-                    </Box>
+                    </Box> */}
                   </Box>
                   <Box display="flex" justifyContent="end" mt="20px">
                     <Button
@@ -161,6 +175,19 @@ const NewProduct = () => {
       </Dialog>
     </Box>
   );
+};
+
+const checkoutSchema = yup.object().shape({
+  sku: yup.string().required("required"),
+  product_description: yup.string().required("required"),
+  instock: yup.string().required("required"),
+  price: yup.string().required("required"),
+});
+const initialValues = {
+  sku: "",
+  product_description: "",
+  instock: "",
+  price: "",
 };
 
 export default NewProduct;

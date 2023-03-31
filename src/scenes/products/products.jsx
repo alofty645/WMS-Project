@@ -47,11 +47,7 @@ const Sales = () => {
       headerName: "Price",
       flex: 1,
     },
-    {
-      field: "incomingstock",
-      headerName: "Incoming Stock",
-      flex: 1,
-    },
+
     {
       field: "status",
       headerName: "Status",

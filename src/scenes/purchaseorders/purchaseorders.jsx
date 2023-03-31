@@ -1,11 +1,11 @@
-import { Button, Box, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import AddIcon from "@mui/icons-material/Add";
 import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 import Uploadcsv from "../forms/uploadcsv";
+import NewPurchaseOrder from "../forms/newpurchaseorder";
 
 const Purchaseorders = () => {
   const theme = useTheme();
@@ -56,18 +56,7 @@ const Purchaseorders = () => {
     <Box m="20px">
       <Header title="Purchase Orders" />
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Button
-          sx={{
-            backgroundColor: colors.blueAccent[700],
-            color: colors.grey[100],
-            fontSize: "14px",
-            fontWeight: "bold",
-            padding: "10px 20px",
-          }}
-        >
-          <AddIcon sx={{ mr: "10px" }} />
-          New Purchase Order
-        </Button>
+        <NewPurchaseOrder></NewPurchaseOrder>
         <Uploadcsv></Uploadcsv>
       </Box>
       <Box

@@ -152,7 +152,7 @@ const NewContact = () => {
                       helperText={touched.address && errors.address}
                       sx={{ gridColumn: "span 4" }}
                     />
-                    <TextField
+                    {/* <TextField
                       fullWidth
                       variant="filled"
                       type="text"
@@ -190,7 +190,7 @@ const NewContact = () => {
                       error={!!touched.postcode && !!errors.postcode}
                       helperText={touched.postcode && errors.postcode}
                       sx={{ gridColumn: "span 2" }}
-                    />
+                    /> */}
                     <Box sx={{ gridColumn: "span 2" }} />
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
@@ -204,7 +204,7 @@ const NewContact = () => {
                       </FormControl>
                     </Box>
 
-                    <Box sx={{ gridColumn: "span 2" }}>
+                    {/* <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Pricing Category</InputLabel>
                         <Select defaultValue value={1} label="Pricing Category">
@@ -214,7 +214,7 @@ const NewContact = () => {
                           <MenuItem value={3}>3</MenuItem>
                         </Select>
                       </FormControl>
-                    </Box>
+                    </Box> */}
                   </Box>
                   <Box display="flex" justifyContent="end" mt="20px">
                     <Button

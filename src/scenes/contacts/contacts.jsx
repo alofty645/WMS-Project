@@ -19,14 +19,12 @@ const Contacts = () => {
       field: "FirstName",
       headerName: "First Name",
       flex: 1,
-      cellClassName: "name-column--cell",
     },
     {
       field: "LastName",
       headerName: "Last Name",
-      type: "text",
-      headerAlign: "left",
-      align: "left",
+
+      flex: 1,
     },
     {
       field: "phone",
@@ -44,24 +42,9 @@ const Contacts = () => {
       flex: 1,
     },
     {
-      field: "city",
-      headerName: "City",
-      flex: 1,
-    },
-    {
-      field: "zipCode",
-      headerName: "Zip Code",
-      flex: 1,
-    },
-    {
-      field: "Pricingcategory",
-      headerName: "Pricing Category",
-      flex: 1,
-    },
-    {
       field: "Admin",
       headerName: "Admin",
-      flex: 2,
+      flex: 1,
       renderCell: ({ row: { access } }) => {
         return <Editbutton></Editbutton>;
       },

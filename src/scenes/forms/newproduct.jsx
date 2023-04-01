@@ -23,16 +23,23 @@ const NewProduct = () => {
   const [open, setOpen] = React.useState(false);
 
   async function setNewProduct(values) {
-    const { data, error } = await supabase.from("product").insert([
+    const { data, error } = await supabase.from("products").insert([
       {
-        sku: values.sku,
+        product_sku: values.product_sku,
         product_description: values.product_description,
-        in_stock: values.instock,
-        price: values.price,
-        baylocation: values.baylocation,
+        in_stock: values.in_stock,
+        product_price: values.product_price,
+        bay_location: values.bay_location,
+        product_status: values.product_status,
       },
     ]);
   }
+
+  const [status, setStatus] = React.useState("");
+
+  const handleChange = (event) => {
+    setStatus(event.target.value);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -93,8 +100,8 @@ const NewProduct = () => {
                     }}
                   >
                     <TextField
-                      value={values.sku}
-                      name="sku"
+                      value={values.product_sku}
+                      name="product_sku"
                       variant="filled"
                       type="string"
                       label="SKU"
@@ -113,8 +120,8 @@ const NewProduct = () => {
                       sx={{ gridColumn: "span 4" }}
                     />
                     <TextField
-                      value={values.instock}
-                      name="instock"
+                      value={values.in_stock}
+                      name="in_stock"
                       variant="filled"
                       type="string"
                       label="In Stock"
@@ -123,8 +130,8 @@ const NewProduct = () => {
                       sx={{ gridColumn: "span 2" }}
                     />
                     <TextField
-                      value={values.baylocation}
-                      name="baylocation"
+                      value={values.bay_location}
+                      name="bay_location"
                       variant="filled"
                       type="string"
                       label="Bay Location"
@@ -133,8 +140,8 @@ const NewProduct = () => {
                       sx={{ gridColumn: "span 2" }}
                     />
                     <TextField
-                      value={values.price}
-                      name="price"
+                      value={values.product_price}
+                      name="product_price"
                       variant="filled"
                       type="string"
                       label="Price"
@@ -143,20 +150,21 @@ const NewProduct = () => {
                       sx={{ gridColumn: "span 2" }}
                     />
 
-                    {/* <Box sx={{ gridColumn: "span 2" }}>
+                    <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Product Status</InputLabel>
                         <Select
-                          value={values.status}
-                          name="price"
-                          value={1}
-                          label="Pricing Category"
+                          value={values.product_status}
+                          name="product_status"
+                          label="Pricing Status"
+                          onChange={handleChange}
                         >
-                          <MenuItem value={1}>Active</MenuItem>
-                          <MenuItem value={2}>Inactive</MenuItem>
+                          <MenuItem value={"Active"}>Active</MenuItem>
+                          <MenuItem value={"Inactive"}>Inactive</MenuItem>
+                          <MenuItem value={"Draft"}>Draft</MenuItem>
                         </Select>
                       </FormControl>
-                    </Box> */}
+                    </Box>
                   </Box>
                   <Box display="flex" justifyContent="end" mt="20px">
                     <Button
@@ -199,17 +207,19 @@ const NewProduct = () => {
 };
 
 const checkoutSchema = yup.object().shape({
-  sku: yup.string().required("required"),
+  product_sku: yup.string().required("required"),
   product_description: yup.string().required("required"),
-  instock: yup.string().required("required"),
-  price: yup.string().required("required"),
-  baylocation: yup.string(),
+  in_stock: yup.number().required("required"),
+  product_price: yup.number().required("required"),
+  bay_location: yup.string(),
 });
 const initialValues = {
-  sku: "",
+  product_sku: "",
   product_description: "",
-  instock: "",
-  price: "",
+  in_stock: "",
+  product_price: "",
+  bay_location: "",
+  product_status: "",
 };
 
 export default NewProduct;

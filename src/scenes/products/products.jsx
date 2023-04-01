@@ -12,7 +12,7 @@ const Sales = () => {
   const [products, setProducts] = useState([]);
 
   async function getProducts() {
-    let { data: product, error } = await supabase.from("product").select("*");
+    let { data: product } = await supabase.from("products").select("*");
     setProducts(product);
   }
 
@@ -23,7 +23,7 @@ const Sales = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "sku", headerName: "Product ID" },
+    { field: "product_sku", headerName: "Product ID" },
     {
       field: "product_description",
       headerName: "Product Description",
@@ -37,19 +37,19 @@ const Sales = () => {
     },
 
     {
-      field: "baylocation",
+      field: "bay_location",
       headerName: "Location",
       flex: 1,
     },
 
     {
-      field: "price",
+      field: "product_price",
       headerName: "Price",
       flex: 1,
     },
 
     {
-      field: "status",
+      field: "product_status",
       headerName: "Status",
       flex: 1,
     },

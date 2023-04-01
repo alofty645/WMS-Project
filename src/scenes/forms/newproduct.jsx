@@ -14,12 +14,26 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import supabase from "../../supabase.js";
 import * as yup from "yup";
+import { useEffect, useState } from "react";
 
 const NewProduct = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [open, setOpen] = React.useState(false);
+
+  async function setNewProduct(values) {
+    const { data, error } = await supabase.from("product").insert([
+      {
+        sku: values.sku,
+        product_description: values.product_description,
+        in_stock: values.instock,
+        price: values.price,
+        baylocation: values.baylocation,
+      },
+    ]);
+  }
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -28,8 +42,13 @@ const NewProduct = () => {
   };
 
   const handleFormSubmit = (values) => {
-    console.log(values);
+    setNewProduct(values);
+    setOpen(false);
   };
+
+  // useEffect(() => {
+  //   handleFormSubmit();
+  // });
 
   return (
     <Box>
@@ -80,9 +99,8 @@ const NewProduct = () => {
                     <TextField
                       value={values.sku}
                       name="sku"
-                      fullWidth
                       variant="filled"
-                      type="text"
+                      type="string"
                       label="SKU"
                       onBlur={handleBlur}
                       onChange={handleChange}
@@ -91,9 +109,8 @@ const NewProduct = () => {
                     <TextField
                       value={values.product_description}
                       name="product_description"
-                      fullWidth
                       variant="filled"
-                      type="text"
+                      type="string"
                       label="Product Description"
                       onBlur={handleBlur}
                       onChange={handleChange}
@@ -102,10 +119,19 @@ const NewProduct = () => {
                     <TextField
                       value={values.instock}
                       name="instock"
-                      fullWidth
                       variant="filled"
-                      type="text"
+                      type="string"
                       label="In Stock"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      sx={{ gridColumn: "span 2" }}
+                    />
+                    <TextField
+                      value={values.baylocation}
+                      name="baylocation"
+                      variant="filled"
+                      type="string"
+                      label="Bay Location"
                       onBlur={handleBlur}
                       onChange={handleChange}
                       sx={{ gridColumn: "span 2" }}
@@ -113,9 +139,8 @@ const NewProduct = () => {
                     <TextField
                       value={values.price}
                       name="price"
-                      fullWidth
                       variant="filled"
-                      type="text"
+                      type="string"
                       label="Price"
                       onBlur={handleBlur}
                       onChange={handleChange}
@@ -182,6 +207,7 @@ const checkoutSchema = yup.object().shape({
   product_description: yup.string().required("required"),
   instock: yup.string().required("required"),
   price: yup.string().required("required"),
+  baylocation: yup.string(),
 });
 const initialValues = {
   sku: "",

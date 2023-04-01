@@ -46,10 +46,6 @@ const NewProduct = () => {
     setOpen(false);
   };
 
-  // useEffect(() => {
-  //   handleFormSubmit();
-  // });
-
   return (
     <Box>
       <Button

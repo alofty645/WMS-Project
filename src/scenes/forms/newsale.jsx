@@ -78,6 +78,31 @@ const NewSale = () => {
                       },
                     }}
                   >
+                    <Box sx={{ gridColumn: "span 2" }}>
+                      <FormControl fullWidth>
+                        <InputLabel>Sale Type</InputLabel>
+                        <Select label="Pricing Category">
+                          <MenuItem value={1}>B2C</MenuItem>
+                          <MenuItem value={2}>B2B</MenuItem>
+                          <MenuItem value={3}>Transfer</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                    <Box sx={{ gridColumn: "span 2" }}>
+                      <FormControl fullWidth>
+                        <InputLabel>Sale Status</InputLabel>
+                        <Select label="Pricing Category">
+                          <MenuItem value={1}>Draft</MenuItem>
+                          <MenuItem value={2}>New</MenuItem>
+                          <MenuItem value={3}>Picking</MenuItem>
+                          <MenuItem value={4}>Packing</MenuItem>
+                          <MenuItem value={6}>Shipped</MenuItem>
+                          <MenuItem value={6}>In Transit</MenuItem>
+                          <MenuItem value={7}>Delivered</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                    <Box sx={{ gridColumn: "span 2" }}></Box>
                     <TextField
                       fullWidth
                       variant="filled"
@@ -94,18 +119,9 @@ const NewSale = () => {
                       label="Customer"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      sx={{ gridColumn: "span 2" }}
+                      sx={{ gridColumn: "span 4" }}
                     />
-                    <Box sx={{ gridColumn: "span 2" }}>
-                      <FormControl fullWidth>
-                        <InputLabel>Order Status</InputLabel>
-                        <Select defaultValue value={1} label="Pricing Category">
-                          <MenuItem value={1}>Active</MenuItem>
-                          <MenuItem value={2}>Draft</MenuItem>
-                          <MenuItem value={3}>Transfer</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
+
                     <TextField
                       fullWidth
                       variant="filled"

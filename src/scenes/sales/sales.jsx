@@ -25,7 +25,7 @@ const Sales = () => {
     },
 
     {
-      field: "",
+      field: "contacttype",
       headerName: "Contact Type",
       flex: 1,
     },

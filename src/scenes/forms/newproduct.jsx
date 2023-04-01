@@ -14,7 +14,6 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import supabase from "../../supabase.js";
 import * as yup from "yup";
-import { useEffect, useState } from "react";
 
 const NewProduct = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");

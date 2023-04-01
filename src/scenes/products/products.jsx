@@ -38,7 +38,7 @@ const Sales = () => {
 
     {
       field: "bay_location",
-      headerName: "Location",
+      headerName: "Bay Location",
       flex: 1,
     },
 

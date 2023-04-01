@@ -19,6 +19,13 @@ const NewContact = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [open, setOpen] = React.useState(false);
+
+  const [type, setType] = React.useState("");
+
+  const handleType = (event) => {
+    setType(event.target.value);
+  };
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -147,7 +154,7 @@ const NewContact = () => {
                       onBlur={handleBlur}
                       onChange={handleChange}
                       value={values.address}
-                      name="BillingAddress"
+                      name="address"
                       error={!!touched.address && !!errors.address}
                       helperText={touched.address && errors.address}
                       sx={{ gridColumn: "span 4" }}
@@ -195,8 +202,13 @@ const NewContact = () => {
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Contact Type</InputLabel>
-                        <Select defaultValue value={0} label="Contact">
-                          <MenuItem value={0}>Select</MenuItem>
+                        <Select
+                          label="Contact"
+                          value={values.contacttype}
+                          error={!!touched.contacttype && !!errors.contacttype}
+                          helperText={touched.contacttype && errors.contacttype}
+                          onChange={handleType}
+                        >
                           <MenuItem value={1}>B2C Customer</MenuItem>
                           <MenuItem value={2}>B2B Customer</MenuItem>
                           <MenuItem value={3}>Supplier</MenuItem>
@@ -256,27 +268,20 @@ const NewContact = () => {
   );
 };
 
-const phoneRegExp =
-  /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
-
 const checkoutSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
+  business: yup.string(),
   email: yup.string().email("invalid email").required("required"),
-  contact: yup
-    .string()
-    .matches(phoneRegExp, "Phone number is not valid")
-    .required("required"),
-  address1: yup.string().required("required"),
-  address2: yup.string().required("required"),
+  contact: yup.string(),
+  address: yup.string().required("required"),
 });
 const initialValues = {
   firstName: "",
   lastName: "",
   email: "",
   contact: "",
-  address1: "",
-  address2: "",
+  address: "",
 };
 
 export default NewContact;

@@ -14,6 +14,7 @@ const Sales = () => {
   async function getProducts() {
     let { data: product } = await supabase.from("products").select("*");
     setProducts(product);
+    console.log(product);
   }
 
   useEffect(() => {
@@ -33,7 +34,6 @@ const Sales = () => {
       field: "in_stock",
       headerName: "In Stock",
       flex: 1,
-      cellClassName: "name-column--cell",
     },
 
     {

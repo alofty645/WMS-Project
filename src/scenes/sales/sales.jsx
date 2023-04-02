@@ -31,7 +31,7 @@ const Sales = () => {
     },
     {
       field: "address",
-      headerName: "Address",
+      headerName: "Shipping Address",
       flex: 1,
     },
 

@@ -25,6 +25,7 @@ const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
+    { field: "contact_id", headerName: "Contact ID" },
     { field: "contact_type", headerName: "Contact Type" },
     {
       field: "first_name",
@@ -49,6 +50,11 @@ const Contacts = () => {
     {
       field: "billing_address",
       headerName: "Billing Address",
+      flex: 1,
+    },
+    {
+      field: "pricing_category",
+      headerName: "Pricing Category",
       flex: 1,
     },
 

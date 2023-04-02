@@ -25,7 +25,6 @@ const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "contact_id", headerName: "Contact ID" },
     { field: "contact_type", headerName: "Contact Type" },
     {
       field: "first_name",
@@ -109,7 +108,7 @@ const Contacts = () => {
       >
         <DataGrid
           checkboxSelection
-          rows={mockDataContacts}
+          rows={contacts}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />

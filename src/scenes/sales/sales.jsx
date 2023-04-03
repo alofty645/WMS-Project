@@ -2,12 +2,24 @@ import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import { mockDataInvoices } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 import Uploadcsv from "../forms/uploadcsv";
 import NewSale from "../forms/newsale";
+import { useEffect, useState } from "react";
+import supabase from "../../supabase.js";
 
 const Sales = () => {
+  const [sales, setSales] = useState([]);
+
+  async function getSales() {
+    let { data: sale } = await supabase.from("sales").select("*");
+    setSales(sale);
+    console.log(sale);
+  }
+
+  useEffect(() => {
+    getSales();
+  }, []);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
@@ -102,7 +114,7 @@ const Sales = () => {
       >
         <DataGrid
           checkboxSelection
-          rows={mockDataInvoices}
+          rows={sales}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />

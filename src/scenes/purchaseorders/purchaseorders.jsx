@@ -2,16 +2,28 @@ import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import { productData } from "../../data/mockData";
 import Editbutton from "../../components/editbutton";
 import Uploadcsv from "../forms/uploadcsv";
 import NewPurchaseOrder from "../forms/newpurchaseorder";
+import { useEffect, useState } from "react";
+import supabase from "../../supabase.js";
 
 const Purchaseorders = () => {
+  const [purchaseorders, setPO] = useState([]);
+
+  async function getPO() {
+    let { data: PO } = await supabase.from("purchaseorders").select("*");
+    setPO(PO);
+  }
+
+  useEffect(() => {
+    getPO();
+  }, []);
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: "prodid", headerName: "Purchase ID" },
+    { field: "id", headerName: "Purchase ID" },
     { field: "podate", headerName: "Date" },
     {
       field: "proddesc",
@@ -93,7 +105,7 @@ const Purchaseorders = () => {
       >
         <DataGrid
           checkboxSelection
-          rows={productData}
+          rows={purchaseorders}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />

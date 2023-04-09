@@ -81,7 +81,7 @@ const NewSale = () => {
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Sale Type</InputLabel>
-                        <Select label="Pricing Category">
+                        <Select label="Sale Type">
                           <MenuItem value={1}>B2C</MenuItem>
                           <MenuItem value={2}>B2B</MenuItem>
                           <MenuItem value={3}>Transfer</MenuItem>
@@ -91,7 +91,7 @@ const NewSale = () => {
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Sale Status</InputLabel>
-                        <Select label="Pricing Category">
+                        <Select defaultValue={2} label="Pricing Status">
                           <MenuItem value={1}>Draft</MenuItem>
                           <MenuItem value={2}>New</MenuItem>
                           <MenuItem value={3}>Picking</MenuItem>
@@ -132,7 +132,7 @@ const NewSale = () => {
                       sx={{ gridColumn: "span 6" }}
                     />
 
-                    <Typography fullWidth>
+                    <Typography fullWidth sx={{ gridColumn: "span 6" }}>
                       <h2>Products</h2>
                     </Typography>
 
@@ -143,9 +143,28 @@ const NewSale = () => {
                       label="Add a Product"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      sx={{ gridColumn: "span 6" }}
+                      sx={{ gridColumn: "span 2" }}
                     />
 
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Quantity"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      sx={{ gridColumn: "span 2" }}
+                    />
+
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Price"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      sx={{ gridColumn: "span 2" }}
+                    />
                     <Box
                       style={{
                         height: "100%",

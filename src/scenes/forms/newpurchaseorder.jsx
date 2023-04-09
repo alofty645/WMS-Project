@@ -98,7 +98,7 @@ const NewPurchaseOrder = () => {
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
                         <InputLabel>Purchase Status</InputLabel>
-                        <Select defaultValue value={1} label="Pricing Category">
+                        <Select defaultValue={1} label="Pricing Category">
                           <MenuItem value={1}>Active</MenuItem>
                           <MenuItem value={2}>Draft</MenuItem>
                           <MenuItem value={3}>Cancelled</MenuItem>

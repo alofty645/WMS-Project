@@ -38,7 +38,7 @@ const Sales = () => {
 
     {
       field: "contacttype",
-      headerName: "Contact Type",
+      headerName: "Sale Type",
       flex: 1,
     },
     {
@@ -46,7 +46,11 @@ const Sales = () => {
       headerName: "Shipping Address",
       flex: 1,
     },
-
+    {
+      field: "products",
+      headerName: "Products",
+      flex: 1,
+    },
     {
       field: "cost",
       headerName: "Order Total",

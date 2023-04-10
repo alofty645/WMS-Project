@@ -50,11 +50,6 @@ const Contacts = () => {
       headerName: "Billing Address",
       flex: 1,
     },
-    {
-      field: "pricing_category",
-      headerName: "Pricing Category",
-      flex: 1,
-    },
 
     {
       field: "Admin",

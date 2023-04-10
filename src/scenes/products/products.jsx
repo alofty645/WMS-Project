@@ -8,7 +8,7 @@ import Uploadcsv from "../forms/uploadcsv";
 import { useEffect, useState } from "react";
 import supabase from "../../supabase.js";
 
-const Sales = () => {
+const Products = () => {
   const [products, setProducts] = useState([]);
 
   async function getProducts() {
@@ -114,4 +114,4 @@ const Sales = () => {
   );
 };
 
-export default Sales;
+export default Products;

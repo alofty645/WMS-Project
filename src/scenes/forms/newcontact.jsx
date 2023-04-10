@@ -13,12 +13,26 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
+import supabase from "../../supabase.js";
 
 const NewContact = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [open, setOpen] = React.useState(false);
+
+  async function setNewContacts(values) {
+    const { data, error } = await supabase.from("contacts").insert([
+      {
+        first_name: values.firstName,
+        last_name: values.lastName,
+        contact_type: values.contacttype,
+        contact_email: values.email,
+        phone_number: values.contnum,
+        billing_address: values.address,
+      },
+    ]);
+  }
 
   const [type, setType] = React.useState("");
 
@@ -34,6 +48,8 @@ const NewContact = () => {
   };
 
   const handleFormSubmit = (values) => {
+    setNewContacts(values);
+    setOpen(false);
     console.log(values);
   };
 
@@ -87,7 +103,7 @@ const NewContact = () => {
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="First Name"
+                      label="first Name"
                       onBlur={handleBlur}
                       onChange={handleChange}
                       value={values.firstName}
@@ -115,10 +131,10 @@ const NewContact = () => {
                       label="Contact Number"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      value={values.contact}
+                      value={values.contnum}
                       name="contact"
-                      error={!!touched.contact && !!errors.contact}
-                      helperText={touched.contact && errors.contact}
+                      error={!!touched.contnum && !!errors.contnum}
+                      helperText={touched.contnum && errors.contnum}
                       sx={{ gridColumn: "span 2" }}
                     />
                     <TextField
@@ -159,45 +175,6 @@ const NewContact = () => {
                       helperText={touched.address && errors.address}
                       sx={{ gridColumn: "span 4" }}
                     />
-                    {/* <TextField
-                      fullWidth
-                      variant="filled"
-                      type="text"
-                      label="City"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      value={values.city}
-                      name="city"
-                      error={!!touched.city && !!errors.city}
-                      helperText={touched.city && errors.city}
-                      sx={{ gridColumn: "span 2" }}
-                    />
-                    <TextField
-                      fullWidth
-                      variant="filled"
-                      type="text"
-                      label="Country"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      value={values.country}
-                      name="Country"
-                      error={!!touched.country && !!errors.country}
-                      helperText={touched.country && errors.subcountryurb}
-                      sx={{ gridColumn: "span 2" }}
-                    />
-                    <TextField
-                      fullWidth
-                      variant="filled"
-                      type="text"
-                      label="Postcode"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      value={values.postcode}
-                      name="Postcode"
-                      error={!!touched.postcode && !!errors.postcode}
-                      helperText={touched.postcode && errors.postcode}
-                      sx={{ gridColumn: "span 2" }}
-                    /> */}
                     <Box sx={{ gridColumn: "span 2" }} />
                     <Box sx={{ gridColumn: "span 2" }}>
                       <FormControl fullWidth>
@@ -273,14 +250,14 @@ const checkoutSchema = yup.object().shape({
   lastName: yup.string().required("required"),
   business: yup.string(),
   email: yup.string().email("invalid email").required("required"),
-  contact: yup.string(),
+  contnum: yup.string(),
   address: yup.string().required("required"),
 });
 const initialValues = {
   firstName: "",
   lastName: "",
   email: "",
-  contact: "",
+  contnum: "",
   address: "",
 };
 

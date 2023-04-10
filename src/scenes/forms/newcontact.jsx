@@ -26,7 +26,7 @@ const NewContact = () => {
       {
         first_name: values.firstName,
         last_name: values.lastName,
-        contact_type: values.contacttype,
+        contact_type: type,
         contact_email: values.email,
         phone_number: values.contnum,
         billing_address: values.address,
@@ -132,7 +132,7 @@ const NewContact = () => {
                       onBlur={handleBlur}
                       onChange={handleChange}
                       value={values.contnum}
-                      name="contact"
+                      name="contnum"
                       error={!!touched.contnum && !!errors.contnum}
                       helperText={touched.contnum && errors.contnum}
                       sx={{ gridColumn: "span 2" }}
@@ -180,15 +180,16 @@ const NewContact = () => {
                       <FormControl fullWidth>
                         <InputLabel>Contact Type</InputLabel>
                         <Select
-                          label="Contact"
-                          value={values.contacttype}
-                          error={!!touched.contacttype && !!errors.contacttype}
-                          helperText={touched.contacttype && errors.contacttype}
+                          label="Contact Type"
+                          fullWidth
+                          variant="filled"
+                          value={type}
+                          name="contacttype"
                           onChange={handleType}
                         >
-                          <MenuItem value={1}>B2C Customer</MenuItem>
-                          <MenuItem value={2}>B2B Customer</MenuItem>
-                          <MenuItem value={3}>Supplier</MenuItem>
+                          <MenuItem value={"B2C"}>B2C</MenuItem>
+                          <MenuItem value={"B2B"}>B2B</MenuItem>
+                          <MenuItem value={"Supplier"}>Supplier</MenuItem>
                         </Select>
                       </FormControl>
                     </Box>

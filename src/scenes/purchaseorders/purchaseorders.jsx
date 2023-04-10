@@ -24,10 +24,16 @@ const Purchaseorders = () => {
   const colors = tokens(theme.palette.mode);
   const columns = [
     { field: "id", headerName: "Purchase ID" },
-    { field: "podate", headerName: "Date" },
+    { field: "purchase_date", headerName: "Date" },
     {
       field: "proddesc",
       headerName: "Supplier ",
+      flex: 1,
+    },
+
+    {
+      field: "expected_date",
+      headerName: "Expected Date",
       flex: 1,
     },
     {
@@ -38,18 +44,12 @@ const Purchaseorders = () => {
     },
 
     {
-      field: "baylocation",
-      headerName: "Expected Date",
-      flex: 1,
-    },
-
-    {
       field: "prodprice",
       headerName: "Total Purchase Price",
       flex: 1,
     },
     {
-      field: " ",
+      field: "purchase_status",
       headerName: "Status",
       flex: 1,
     },

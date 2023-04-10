@@ -25,7 +25,7 @@ const Sales = () => {
   const columns = [
     { field: "id", headerName: "Order ID" },
     {
-      field: "date",
+      field: "sale_date",
       headerName: "Date",
       flex: 1,
     },
@@ -37,12 +37,12 @@ const Sales = () => {
     },
 
     {
-      field: "contacttype",
+      field: "sale_type",
       headerName: "Sale Type",
       flex: 1,
     },
     {
-      field: "address",
+      field: "shipping_address",
       headerName: "Shipping Address",
       flex: 1,
     },
@@ -57,7 +57,7 @@ const Sales = () => {
       flex: 1,
     },
     {
-      field: " ",
+      field: "sale_status",
       headerName: "Status",
       flex: 1,
     },

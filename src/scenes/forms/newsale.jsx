@@ -94,11 +94,7 @@ const NewSale = () => {
                         <Select defaultValue={2} label="Pricing Status">
                           <MenuItem value={1}>Draft</MenuItem>
                           <MenuItem value={2}>New</MenuItem>
-                          <MenuItem value={3}>Picking</MenuItem>
-                          <MenuItem value={4}>Packing</MenuItem>
-                          <MenuItem value={6}>Shipped</MenuItem>
-                          <MenuItem value={6}>In Transit</MenuItem>
-                          <MenuItem value={7}>Delivered</MenuItem>
+                          <MenuItem value={3}>Complete</MenuItem>
                         </Select>
                       </FormControl>
                     </Box>
